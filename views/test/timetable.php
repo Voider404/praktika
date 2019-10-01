@@ -41,10 +41,10 @@ foreach($models as $timetable):
 <td><?=$timetable->price?></td>
 <td><?=$timetable->train->number?></td>
 <?php
-if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
   echo Html::tag("td", Html::tag("a", "Убрать маршрут", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/delete?id=' . $timetable->id),]));
   echo Html::tag("td", Html::tag("a", "Ред.", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/issusred?id=' . $timetable->id),]));
-} if(Yii::$app->user->id && (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya')) { $form1 = ActiveForm::begin(['id' => 'contact-form']);
+} if(Yii::$app->user->id && (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG')) { $form1 = ActiveForm::begin(['id' => 'contact-form']);
   echo '<td>';
   echo Html::tag("a", "Забронировать", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/issus4?id='). $timetable->id]);
   ActiveForm::end();
@@ -65,7 +65,7 @@ endforeach;
 </tbody>
 </table>
 <?php
-if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
   echo Html::tag("a", "Добавить билет", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/issus')]);} ?>
  <?php
 echo LinkPager::widget([

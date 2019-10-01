@@ -21,9 +21,9 @@ foreach($model3 as $reserved):
 <td><?=$reserved->start_reserv?></td>
 
 <?php
-if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
   echo Html::tag("td", Html::tag("a", "Отменить бронь", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/delete4?id=' . $reserved->id),]));
-}if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+}if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
   echo Html::tag("td", Html::tag("a", "Подтвердить бронь", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/reservedok?id=' . $reserved->id),]));}
 ?>
 </tr>

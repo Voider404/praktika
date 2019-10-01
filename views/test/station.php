@@ -21,7 +21,7 @@ foreach($model as $station):
 
 
 <?php
-if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
   echo Html::tag("td", Html::tag("a", "Убрать станцию", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/dele?id=' . $stay->id),]));
   echo Html::tag("td", Html::tag("a", "Ред.", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/issus3red?id=' . $stay->id),]));
 }
@@ -33,5 +33,5 @@ endforeach;
 </tbody>
 </table>
 <?php
-if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
   echo Html::tag("a", "Добавить станцию", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/issus3')]);} ?>

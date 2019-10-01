@@ -48,12 +48,12 @@ AppAsset::register($this);
         <a class="nav-link" href="<?php echo Url::toRoute('/test/timetable');?>">Расписание</a>
         </li>
         <?php 
-        if (\app\models\User::findOne(Yii::$app->user->id == 1)->password == '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+        if (\app\models\User::findOne(Yii::$app->user->id == 1)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
   echo Html::tag("a", "Станции", ["class"=>"nav-link","href"=>Url::toRoute('/test/station')]);
 }
 ?>
 <?php
-if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya'){
+if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG'){
   echo Html::tag("a", "Мои Брони", ["class"=>"nav-link","href"=>Url::toRoute('/test/reservedokk2?id=') . Yii::$app->user->id]);
 }
 ?>
@@ -63,7 +63,7 @@ if (\app\models\User::findOne(Yii::$app->user->id)){
 }
 ?>
 <?php 
-        if (\app\models\User::findOne(Yii::$app->user->id == 1)->password == '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+        if (\app\models\User::findOne(Yii::$app->user->id == 1)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
   echo Html::tag("a", "Брони", ["class"=>"nav-link","href"=>Url::toRoute('/test/reserved')]);
 }
 ?>
