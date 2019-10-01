@@ -34,7 +34,7 @@ class RegistrForm extends ActiveRecord{
 			['email','required','message'=>'Заполните поле!'],
 			['password','required','message'=>'Заполните поле!'],
 			['username','string','max'=>30,'tooLong'=>'Слишком длинный логин','min'=>8,'tooShort'=>'Слишком короткий логин'],
-			['email', 'string', 'max'=>20, 'tooLong'=>'Слишком большой E-mail'],['password', 'string', 'max'=>1000, 'tooLong'=>'Слишком большой пароль','min'=>6,'tooShort'=>'Слишком короткий пароль'],
+			['email', 'string', 'max'=>50, 'tooLong'=>'Слишком большой E-mail'],['password', 'string', 'max'=>1000, 'tooLong'=>'Слишком большой пароль','min'=>6,'tooShort'=>'Слишком короткий пароль'],
 			['username','unique','message'=>'Такое логин уже существует' ],['email','unique','message'=>'Такой email уже существует' ],[
 				'yiipassword','compare', 'compareAttribute' => 'password', 'message'=>'Не совпадает с паролем'
 			],
