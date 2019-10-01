@@ -102,7 +102,7 @@ class TestController extends Controller{
 	
 	public function actionIssus()
 	{
-		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
             return $this->redirect(['login']);
         }
 		$model= new Timetable();
@@ -135,7 +135,7 @@ class TestController extends Controller{
 
 	public function actionDelete($id)
 	{
-		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
             return $this->redirect(['login']);
         }
 		Timetable::findOne($id)->delete();
@@ -164,7 +164,7 @@ class TestController extends Controller{
 	
 	public function actionIssus2()
 	{
-		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
             return $this->redirect(['login']);
         }
 		$model= new Train();
@@ -196,7 +196,7 @@ class TestController extends Controller{
 
     public function actionDelete2($id)
 	{
-		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
             return $this->redirect(['login']);
         }
 		Train::findOne($id)->delete();
@@ -214,7 +214,7 @@ class TestController extends Controller{
 
 	public function actionIssus3()
 	{
-		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
             return $this->redirect(['login']);
         }
 		$model= new Stay();
@@ -248,7 +248,7 @@ class TestController extends Controller{
 
 	public function actionDelete3($id)
 	{
-		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
             return $this->redirect(['login']);
         }
 		Stay::findOne($id)->delete();
@@ -272,7 +272,7 @@ class TestController extends Controller{
 
 	public function actionReservedok($id)
 	{
-		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
 			return $this->redirect(['login']);
 		}else{
 			$st= \app\models\Reserved::find()->where(['status'=>0])->all();
@@ -315,7 +315,7 @@ class TestController extends Controller{
 	
 	public function actionDelete4($id)
 	{
-		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya') {
+		if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
             return $this->redirect(['login']);
         }
 		Reserved::findOne($id)->delete();

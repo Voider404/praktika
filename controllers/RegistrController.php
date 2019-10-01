@@ -44,12 +44,12 @@ class RegistrController extends Controller{
 					
 					
 
-					Yii::$app->session->setFlash('success',"Форма работает");
+					Yii::$app->session->setFlash('success',"Вы зарегестрированы");
 					$model = new RegistrForm();
 					
 					
 				}else{
-					Yii::$app->session->setFlash('error',"Форма не работает");
+					Yii::$app->session->setFlash('error',"Ошибка заполнения формы");
 				}
 			}
 			return $this->render('registr', compact('model'));
