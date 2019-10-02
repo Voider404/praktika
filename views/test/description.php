@@ -1,4 +1,7 @@
 <?php
+/**
+ * @var $seeds \app\models\Description[]
+ */
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 
@@ -13,17 +16,14 @@ use yii\helpers\Html;
 
 
 <div class="col-lg-6 col-sm-12">
-    <?php /*  foreach($des as $des):
-        */?>
-        <h4 class="namedes"><?=$des->user->username?></h4>
 
+    <? foreach($seeds as $seed): ?>
+        <h4 class="namedes"><?=$seed->user->username?></h4>
         <div class="Chat82" >
-            <?=$des->description?>
+            <?=$seed->description?>
         </div>
+    <? endforeach; ?>
 
-        <?php /*
-    endforeach; */
-    ?>
 </div>
 
   </div>
