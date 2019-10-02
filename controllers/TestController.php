@@ -389,19 +389,21 @@ class TestController extends Controller{
 	public function actionDescription()
 	{
 		$id= \Yii::$app->request->get('id');
+
         $train= Train :: findOne($id);
+
         $seed=\app\models\Description::find()->where(['id_train'=>$id])->all();
+
         $model= new Description();
+        // var_dump($seed);
         if ($_POST['Description']) {
+
             $model->description = $_POST['Description']['description'];
             $model->id_user = Yii::$app->user->id;
             $model->id_train = $id;
 
             if ($model->validate() && $model->save()) {
-
                     return $this->redirect(['description','id'=>$id]);
-
-
             }
 
         }
