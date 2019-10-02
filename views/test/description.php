@@ -13,17 +13,17 @@ use yii\helpers\Html;
 
 
 <div class="col-lg-6 col-sm-12">
-<?php foreach($des as $des): 
-?>
-<h4 class="namedes"><?=$des->user->username?></h4>
+    <?php /*  foreach($des as $des):
+        */?>
+        <h4 class="namedes"><?=$des->user->username?></h4>
 
-<div class="Chat82" >
-<?=$des->description?>
-  </div>
-  
-  <?php
-endforeach;
-?>
+        <div class="Chat82" >
+            <?=$des->description?>
+        </div>
+
+        <?php /*
+    endforeach; */
+    ?>
 </div>
 
   </div>
