@@ -315,14 +315,7 @@ class TestController extends Controller
         $models = $query
             ->limit($pages->limit)
             ->all();
-        return $this->render(
-            'reservedokk',
-            ['model' => $array,
-                'models' => $models,
-                'pages' => $pages,
-
-
-            ]);
+        return $this->render('reservedokk', ['model' => $array, 'models' => $models, 'pages' => $pages]);
 
 
     }

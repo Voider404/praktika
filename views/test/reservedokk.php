@@ -23,6 +23,7 @@ use yii\widgets\LinkPager;
   </thead>
   <tbody>
 <?php
+var_dump($reserved, $models);
 foreach ($models as $reserved):
 ?>
 <tr>
