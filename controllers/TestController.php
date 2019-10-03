@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use Yii;
+use yii\data\ActiveDataProvider;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use app\models\TestForm;
 use app\models\Timetable;
@@ -301,20 +303,20 @@ class TestController extends Controller
     public function actionReservedokk($id)
 
     {
-        $array = Timetable::find()->all();
-        $res = \app\models\Reserved::find()->where(['status' => 0])->all();
+        $array = Timetable::find()->all(); // Сбор данных с таблицы
+        $res = \app\models\Reserved::find()->where(['status' => 0])->all(); // Сбор данных гостевых бронирований
         foreach ($res as $r) {
             if ((time() - strtotime($r->start_reserv)) > (60 * 60 * 24)) {
                 $r->delete();
             }
         }
-        $id = User:: findOne(Yii::$app->user->id);
-        $query = Reserved::find()->where(['status' => 1]);
-        $countQuery = clone $query->where(['passanger_id' => $id, 'status' => 1]);
-        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 5]);
-        $models = $query
-            ->limit($pages->limit)
-            ->all();
+        $id = User::findOne(Yii::$app->user->id);
+        $query = Reserved::find()->where(['status' => 1]); // Поиск авторизированных пользоваелей
+      $countQuery = clone $query->where(['status' => 1]);
+        $some = new ActiveDataProvider();
+       $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 5]); // Разделение на страницы
+        $models = $query->all();
+       // VarDumper::dump($models,10,true);
         return $this->render('reservedokk', ['model' => $array, 'models' => $models, 'pages' => $pages]);
 
 
