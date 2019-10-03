@@ -312,7 +312,7 @@ class TestController extends Controller
         }
         $id = User::findOne(Yii::$app->user->id);
         $query = Reserved::find()->where(['status' => 1]); // Поиск авторизированных пользоваелей
-      $countQuery = clone $query->where(['status' => 1]);
+      $countQuery = clone $query->where(['status' => 1,'passanger_id'=>Yii::$app->user->id]);
         $some = new ActiveDataProvider();
        $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 5]); // Разделение на страницы
         $models = $query->all();
