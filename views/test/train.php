@@ -26,7 +26,7 @@ foreach($models as $train):
 <td><?=$train->navigate?></td>
 
 <?php
-if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
+if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
   echo Html::tag("td", Html::tag("a", "Убрать поезд", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/delet?id=' . $train->id),]));
   echo Html::tag("td", Html::tag("a", "Ред.", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/issus2red?id=' . $train->id),]));
 }
@@ -43,7 +43,7 @@ endforeach;
 </tbody>
 </table>
 <?php
-if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
+if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
   echo Html::tag("a", "Добавить поезд", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/issus2')]);} ?>
   <?php
   echo LinkPager::widget([

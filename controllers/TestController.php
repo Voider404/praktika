@@ -27,9 +27,9 @@ class TestController extends Controller
     {
 
         $array = Timetable::find()->all();
-        $res = \app\models\Reserved::find()->where(['status' => 0])->all();
+        $res = \app\models\Reserved::find()->where(['status' => 0])->all(); // Find a guest account
         foreach ($res as $r) {
-            if ((time() - strtotime($r->start_reserv)) > (60 * 60 * 24)) {
+            if ((time() - strtotime($r->start_reserv)) > (60 * 60 * 24)) { // If time passed more than
                 $r->delete();
             }
         }
@@ -70,7 +70,7 @@ class TestController extends Controller
     {
         Yii::$app->user->logout();
 
-        return $this->goHome();
+        return $this->goHome(); // Redirect back to the home page
     }
 
 
@@ -102,14 +102,14 @@ class TestController extends Controller
 
     public function actionIssus()
     {
-        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
-            return $this->redirect(['login']);
+        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
+            return $this->redirect(['login']);// Redirect back to the page
         }
         $model = new Timetable();
         if ($_POST['Timetable']) {
             $model->attributes = $_POST['Timetable'];
             if ($model->validate() && $model->save()) {
-                return $this->redirect(['timetable']);
+                return $this->redirect(['timetable']);// Redirect back to the page
             }
         }
         return $this->render('issus', compact('model'));
@@ -124,7 +124,7 @@ class TestController extends Controller
                 $model->save();
 
             }
-            return $this->redirect(['timetable']);
+            return $this->redirect(['timetable']);// Redirect back to the page
         }
         return $this->render('issusred', compact('model'));
     }
@@ -132,11 +132,11 @@ class TestController extends Controller
 
     public function actionDelete($id)
     {
-        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
-            return $this->redirect(['login']);
+        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
+            return $this->redirect(['login']);// Redirect back to the page
         }
         Timetable::findOne($id)->delete();
-        return $this->redirect(['timetable']);
+        return $this->redirect(['timetable']);// Redirect back to the page
     }
 
 
@@ -158,14 +158,14 @@ class TestController extends Controller
 
     public function actionIssus2()
     {
-        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
+        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
             return $this->redirect(['login']);
         }
         $model = new Train();
         if ($_POST['Train']) {
             $model->attributes = $_POST['Train'];
             if ($model->validate() && $model->save()) {
-                return $this->redirect(['train']);
+                return $this->redirect(['train']); // Redirect back to the page
             }
         }
         return $this->render('issus2', compact('model'));
@@ -181,18 +181,18 @@ class TestController extends Controller
                 $model->save();
 
             }
-            return $this->redirect(['train']);
+            return $this->redirect(['train']); // Redirect back to the page
         }
         return $this->render('issus2red', compact('model'));
     }
 
     public function actionDelete2($id)
     {
-        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
-            return $this->redirect(['login']);
+        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
+            return $this->redirect(['login']); // Redirect back to the page
         }
         Train::findOne($id)->delete();
-        return $this->redirect(['train']);
+        return $this->redirect(['train']); // Redirect back to the page
     }
 
 
@@ -206,14 +206,14 @@ class TestController extends Controller
 
     public function actionIssus3()
     {
-        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
-            return $this->redirect(['login']);
+        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
+            return $this->redirect(['login']); // Redirect back to the page
         }
         $model = new Stay();
         if ($_POST['Stay']) {
             $model->attributes = $_POST['Stay'];
             if ($model->validate() && $model->save()) {
-                return $this->redirect(['station']);
+                return $this->redirect(['station']); // Redirect back to the page
             }
         }
         return $this->render('issus3', compact('model'));
@@ -225,11 +225,11 @@ class TestController extends Controller
         $model = Stay::findOne($id);
         if ($model->load(Yii::$app->request->post())) {
 
-            if ($model->validate()) {
+            if ($model->validate()) { // If model is validated
                 $model->save();
 
             }
-            return $this->redirect(['station']);
+            return $this->redirect(['station']); // Redirect back to the page
         }
         return $this->render('issus3red', compact('model'));
     }
@@ -237,11 +237,11 @@ class TestController extends Controller
 
     public function actionDelete3($id)
     {
-        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
-            return $this->redirect(['login']);
+        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
+            return $this->redirect(['login']); // Redirect back to the page
         }
         Stay::findOne($id)->delete();
-        return $this->redirect(['station']);
+        return $this->redirect(['station']); // Redirect back to the page
     }
 
 
@@ -258,8 +258,8 @@ class TestController extends Controller
 
     public function actionReservedok($id)
     {
-        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
-            return $this->redirect(['login']);
+        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
+            return $this->redirect(['login']); // Redirect back to the page
         } else {
             $st = \app\models\Reserved::find()->where(['status' => 0])->all();
         }
@@ -283,7 +283,7 @@ class TestController extends Controller
             $state->save();;
             Yii::debug($model);
             if ($model->validate() && $model->save()) {
-                return $this->redirect(['timetable']);
+                return $this->redirect(['timetable']); // Redirect back to the page
             }
         }
         return $this->render('issus4', compact('model'));
@@ -292,11 +292,11 @@ class TestController extends Controller
 
     public function actionDelete4($id)
     {
-        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
+        if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
             return $this->redirect(['login']);
         }
         Reserved::findOne($id)->delete();
-        return $this->redirect(['reserved']);
+        return $this->redirect(['reserved']); // Redirect back to the page
 
     }
 
@@ -307,21 +307,17 @@ class TestController extends Controller
         $res = \app\models\Reserved::find()->where(['status' => 0])->all(); // Сбор данных гостевых бронирований
         foreach ($res as $r) {
             if ((time() - strtotime($r->start_reserv)) > (60 * 60 * 24)) {
-                $r->delete();
+                $r->delete(); // Удаление гостевых бронирований
             }
         }
-        $id = User::findOne(Yii::$app->user->id);
-        $query = Reserved::find()->where(['status' => 1]); // Поиск авторизированных пользоваелей
-      $countQuery = clone $query->where(['status' => 1,'passanger_id'=>Yii::$app->user->id]);
-        $some = new ActiveDataProvider();
-       $pages = new Pagination(['totalCount' => $countQuery->count(), 'pageSize' => 5]); // Разделение на страницы
+
+        $query = Reserved::find()->where(['status' => 1]); // Поиск ВСЕХ авторизированных пользоваелей
+        $some = new ActiveDataProvider(); // Провайдер данных, см. Дополнительная литература
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 5]); // Разделение на страницы
         $models = $query->all();
-       // VarDumper::dump($models,10,true);
+        // VarDumper::dump($models,10,true);
         return $this->render('reservedokk', ['model' => $array, 'models' => $models, 'pages' => $pages]);
-
-
     }
-
 
     public function actionReservedokk2($id)
 
@@ -367,7 +363,7 @@ class TestController extends Controller
             $model->id_user = Yii::$app->user->id;
             $model->id_train = $id;
 
-            if ($model->validate() && $model->save()) {
+            if ($model->validate() && $model->save()) { 
                 return $this->redirect(['description', 'id' => $id]);
             }
 

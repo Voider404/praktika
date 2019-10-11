@@ -39,7 +39,7 @@ class RegistrController extends Controller{
 					//$model->password;
 					$model->save();	
 					$model1 = User::findOne($model->id);
-					$model1->password=Yii::$app->getSecurity()->generatePasswordHash($model->password);
+					$model1->password=Yii::$app->getSecurity()->generatePasswordHash($model->password); // Creating password hash by using security method.
 					$model1->save();	
 					
 					
