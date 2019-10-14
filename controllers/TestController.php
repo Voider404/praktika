@@ -308,6 +308,11 @@ class TestController extends Controller
         foreach ($res as $r) {
             if ((time() - strtotime($r->start_reserv)) > (60 * 60 * 24)) {
                 $r->delete(); // Удаление гостевых бронирований
+            else
+                {
+                    
+                }
+            }
             }
         }
 
