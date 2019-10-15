@@ -7,7 +7,7 @@ use yii\widgets\LinkPager;
 <div class="col-lg-6 col-sm-12">
 <? if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') //  If there is a user with a certain password
 {
-    echo Html::tag("td", Html::tag("a", "Изменить статус бронирования", ["class"=>"btn btn-primary",]));
+    echo Html::tag("td", Html::tag("a", "Изменить статус бронирования", ["class"=>"btn btn-primary","href"=>Url::toRoute('/res' ),]));
 }
 ?>
 <table  class="table table-hover">

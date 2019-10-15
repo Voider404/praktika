@@ -3,6 +3,8 @@
 
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
+use yii\helpers\Url;
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -29,7 +31,11 @@ use yii\helpers\Html;
 <br>
 <br>
 <br>
-<h3>(вставьте текст про проект)</h3>
+<? if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') //  If there is a user with a certain password
+{
+    echo Html::tag("td", Html::tag("a", "GII", ["class"=>"btn btn-primary","href"=>Url::toRoute('/gii' ),])); // GII button for admin, why not?
+}
+?>
 
 <?php $this->endBody() ?>
 </body>
