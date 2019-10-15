@@ -308,13 +308,9 @@ class TestController extends Controller
         foreach ($res as $r) {
             if ((time() - strtotime($r->start_reserv)) > (60 * 60 * 24)) {
                 $r->delete(); // Удаление гостевых бронирований
-            else
-                {
-                    
-                }
             }
             }
-        }
+
 
         $query = Reserved::find()->where(['status' => 1]); // Поиск ВСЕХ авторизированных пользоваелей
         $some = new ActiveDataProvider(); // Провайдер данных, см. Дополнительная литература
