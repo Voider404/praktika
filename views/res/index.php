@@ -6,8 +6,10 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ReservedSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-
-$this->title = 'Reserveds';
+if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
+    return $this->redirect(['login']);// Redirect back to the page
+}
+$this->title = 'Брони';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="reserved-index">
@@ -15,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Reserved', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать бронь', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

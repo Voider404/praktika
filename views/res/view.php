@@ -5,7 +5,9 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Reserved */
-
+if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
+    return $this->redirect(['login']);// Redirect back to the page
+}
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Reserveds', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
@@ -16,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'void']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
