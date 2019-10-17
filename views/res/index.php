@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\web\YiiAsset;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ReservedSearch */
@@ -23,24 +24,45 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'passanger_id',
-            'id_route',
-            'start_reserv',
-            'name',
-            'surname',
-            'birthdate',
-            'documents',
-            'status',
+                'id',
+                'passanger_id',
+                'id_route',
+                'start_reserv',
+                'name',
+                'surname',
+                'birthdate',
+                'documents',
+                'status',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                [
+                    'class' => 'yii\grid\ActionColumn',
+
+                    'template' => '{view}{update}{delete}',
+                    'buttons' => [
+                        'view' => function ($url, $model) {
+                            return Html::a('View', $url);
+                        },
+
+
+                        'update' => function ($url, $model) {
+                            return Html::a('Edit', $url);
+                        },
+
+                        'delete' => function ($url, $model) {
+                            return Html::a('Delete', $url);
+                        },
+                    ],
+                ]
+                ],
+            ]
+
+
+     ); ?>
 
 
 </div>
