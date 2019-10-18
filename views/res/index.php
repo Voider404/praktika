@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         },
 
                         'delete' => function ($url, $model) {
-                            return Html::a('Delete', $url);
+                            return Html::a('Delete', $url, ['data-method' => 'POST']);
                         },
                     ],
                 ]
