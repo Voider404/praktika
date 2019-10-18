@@ -51,7 +51,7 @@ endforeach;
 ?>
 </tbody>
 </table>
-<?php
+<?php /*
 echo LinkPager::widget([
     'pagination' => $pages,
     'linkContainerOptions'=>['class'=>'page-item'],
@@ -61,5 +61,5 @@ echo LinkPager::widget([
     'prevPageCssClass' => '',
     'nextPageCssClass'=> '',
     'disabledPageCssClass'=>'page-link disabled',
-]);
+]);*/
 ?>
