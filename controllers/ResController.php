@@ -14,6 +14,7 @@ use yii\filters\VerbFilter;
  */
 class ResController extends Controller
 {
+    public $enableCsrfValidation = false; // Убирает CSRF валидацию (исправление бага, ввиду Bootstrap 4)
     /**
      * {@inheritdoc}
      */
