@@ -36,7 +36,6 @@ use yii\helpers\Url;
     echo Html::tag("td", Html::tag("a", "GII", ["class"=>"btn btn-primary","href"=>Url::toRoute('/gii' ),])); // GII button for admin, why not?
 }
 ?>
-
 <?php $this->endBody() ?>
 </body>
 </html>
