@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 05 2019 г., 17:21
--- Версия сервера: 5.7.25
+-- Время создания: Окт 18 2019 г., 11:17
+-- Версия сервера: 5.7.23
 -- Версия PHP: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -40,7 +40,18 @@ CREATE TABLE `description` (
 --
 
 INSERT INTO `description` (`id`, `id_user`, `id_train`, `description`) VALUES
+(15, 2, 5, 'qsqwdqwdqwd'),
+(16, 2, 5, 'qwdqwdqwdqwd'),
+(17, 2, 5, 'qwdqwdqwdqwdqwd'),
+(18, 2, 5, 'qwdqwdqwdqwd'),
+(19, 2, 5, 'qwdqwdqwdqwd'),
+(20, 2, 5, 'qwdqwdqwdqwdqwd'),
+(21, 2, 5, 'qwdqwdqwdqwd'),
+(22, 2, 5, 'qwdqwdqwdqwdqw'),
+(23, 2, 5, 'qwdqwdqwdqwd'),
 (24, 2, 8, 'wqeqwe'),
+(25, 2, 8, '2e21e12e12e12e'),
+(26, 2, 8, '12e12e12e12e'),
 (27, 2, 8, '12e12e12e12e'),
 (28, 2, 5, 'dqwdqwdqwd\r\n'),
 (29, 2, 5, 'wdqwdqwd'),
@@ -48,11 +59,20 @@ INSERT INTO `description` (`id`, `id_user`, `id_train`, `description`) VALUES
 (31, 2, 5, 'qweqweqweqweqw12212312'),
 (32, 2, 5, 'q2eq2e12e12e12e'),
 (33, 2, 5, ''),
+(34, 2, 5, 'eqweqweqwe'),
+(35, 2, 5, 'qweqweqweqwe'),
+(36, 2, 5, 'qweqweqwe'),
+(37, 2, 5, 'qwdqwdqwd'),
+(38, 5, 2, 'цукцукцук'),
+(39, 5, 2, 'цукцукцукцук'),
+(40, 5, 2, 'цкуцкцукцукцук'),
+(41, 5, 2, 'цукцукцукцкуцук'),
 (42, 5, 2, 'уцкцукцукцкцук'),
 (47, 6, 1, 'ОТЗЫВ\r\n'),
 (51, 6, 1, '123'),
 (52, 8, 1, 'Вроде есть, а вроде нет'),
-(53, 8, 2, 'Хороший поезд, и комментарии интересные\r\n');
+(53, 8, 2, 'Хороший поезд, и комментарии интересные\r\n'),
+(54, 8, 3, 'НУ ВОТ ВАМ ОТЗЫВ!');
 
 -- --------------------------------------------------------
 
@@ -77,9 +97,14 @@ CREATE TABLE `reserved` (
 --
 
 INSERT INTO `reserved` (`id`, `passanger_id`, `id_route`, `start_reserv`, `name`, `surname`, `birthdate`, `documents`, `status`) VALUES
-(2, 5, 3, '2019-06-21 03:13:35', 'Никита', 'Рахманов', '2019-06-05', 12121212, 1),
-(4, NULL, 2, '2019-10-03 12:54:23', 'Дмитрий', 'Григорьев', '2019-10-31', 4016, 1),
-(6, 8, 60, '2019-10-03 14:19:56', 'Денис', 'Кузьмичёв', '0001-01-01', 4013, 0);
+(5, 0, 4, '2019-10-07 13:41:20', 'Евгений', 'Похомович', '3333-03-31', 4016, 1),
+(7, 0, 74, '2019-10-15 14:17:02', 'Денис', 'Григорьев', '1112-11-11', 4013, 1),
+(8, 0, 92, '2019-10-18 10:18:35', 'Артемий', 'Шульженко', NULL, 4015, 1),
+(9, 8, 15, '2019-10-18 10:37:02', 'Яковлева', 'Алиса', NULL, 4015, 1),
+(10, 0, 19, '2019-10-18 10:37:02', 'Арина', 'Крылова', NULL, 4015, 1),
+(11, 0, 17, '2019-10-18 10:37:02', 'Нолик', 'Фиксик', NULL, 4015, 1),
+(12, 7, 89, '2019-10-18 10:37:02', 'Даниил', 'Манзевитый', NULL, 4015, 1),
+(13, 7, 65, '2019-10-18 10:37:02', 'Михаил', 'Лихачёв', NULL, 4014, 1);
 
 -- --------------------------------------------------------
 
@@ -136,9 +161,8 @@ INSERT INTO `timetable` (`id`, `id_train`, `id_station`, `time_start`, `time_end
 (1, 1, 1, '2019-06-21 00:00:00', '2019-06-23 00:00:00', 3500, 2, 1, 1, 1),
 (2, 1, 1, '2019-06-21 00:00:00', '2019-06-24 00:00:00', 3500, 2, 1, 2, 1),
 (3, 1, 1, '2019-06-21 00:00:00', '2019-06-25 00:00:00', 3500, 2, 1, 3, 1),
-(4, 1, 1, '2019-06-21 00:00:00', '2019-06-22 00:00:00', 3500, 2, 1, 4, 0),
-(5, 1, 1, '2019-06-21 00:00:00', '2019-06-22 00:00:00', 3500, 2, 1, 5, 0),
-(6, 1, 1, '2019-06-21 00:00:00', '2019-06-22 00:00:00', 3500, 3, 2, 1, 0),
+(4, 1, 1, '2019-06-21 00:00:00', '2019-06-22 00:00:00', 3500, 2, 1, 4, 1),
+(5, 1, 1, '2019-06-21 00:00:00', '2019-06-22 00:00:00', 4000, 2, 1, 5, 0),
 (7, 1, 1, '2019-06-21 00:00:00', '2019-06-22 00:00:00', 3500, 3, 2, 2, 0),
 (8, 1, 1, '2019-06-21 00:00:00', '2019-06-22 00:00:00', 3500, 3, 2, 3, 0),
 (9, 1, 1, '2019-06-21 00:00:00', '2019-06-22 00:00:00', 3500, 3, 2, 4, 0),
@@ -194,7 +218,7 @@ INSERT INTO `timetable` (`id`, `id_train`, `id_station`, `time_start`, `time_end
 (59, 2, 10, '2019-06-23 00:00:00', '2019-06-24 00:00:00', 3500, 7, 3, 4, 0),
 (60, 2, 10, '2019-06-23 00:00:00', '2019-06-24 00:00:00', 3500, 7, 3, 5, 1),
 (61, 2, 10, '2019-06-24 00:00:00', '2019-06-25 00:00:00', 3500, 6, 4, 1, 0),
-(62, 2, 10, '2019-06-24 00:00:00', '2019-06-25 00:00:00', 3500, 6, 4, 2, 0),
+(62, 2, 10, '2019-06-24 00:00:00', '2019-06-25 00:00:00', 3500, 6, 4, 2, 1),
 (63, 2, 10, '2019-06-24 00:00:00', '2019-06-25 00:00:00', 3500, 6, 4, 3, 0),
 (64, 2, 10, '2019-06-24 00:00:00', '2019-06-25 00:00:00', 3500, 6, 4, 4, 0),
 (65, 2, 10, '2019-06-24 00:00:00', '2019-06-25 00:00:00', 3500, 6, 4, 5, 0),
@@ -206,7 +230,7 @@ INSERT INTO `timetable` (`id`, `id_train`, `id_station`, `time_start`, `time_end
 (71, 2, 10, '2019-06-26 00:00:00', '2019-06-27 00:00:00', 3500, 4, 6, 1, 0),
 (72, 2, 10, '2019-06-26 00:00:00', '2019-06-27 00:00:00', 3500, 4, 6, 2, 0),
 (73, 2, 10, '2019-06-26 00:00:00', '2019-06-27 00:00:00', 3500, 4, 6, 3, 0),
-(74, 2, 10, '2019-06-26 00:00:00', '2019-06-27 00:00:00', 3500, 4, 6, 4, 0),
+(74, 2, 10, '2019-06-26 00:00:00', '2019-06-27 00:00:00', 3500, 4, 6, 4, 1),
 (75, 2, 10, '2019-06-26 00:00:00', '2019-06-27 00:00:00', 3500, 4, 6, 5, 0),
 (76, 2, 10, '2019-06-27 00:00:00', '2019-06-28 00:00:00', 3500, 3, 7, 1, 0),
 (77, 2, 10, '2019-06-27 00:00:00', '2019-06-28 00:00:00', 3500, 3, 7, 2, 0),
@@ -223,7 +247,8 @@ INSERT INTO `timetable` (`id`, `id_train`, `id_station`, `time_start`, `time_end
 (88, 2, 10, '2019-06-29 00:00:00', '2019-06-30 00:00:00', 3500, 1, 9, 3, 0),
 (89, 2, 10, '2019-06-29 00:00:00', '2019-06-30 00:00:00', 3500, 1, 9, 4, 0),
 (90, 2, 10, '2019-06-29 10:00:00', '2019-06-30 00:00:00', 3500, 1, 9, 5, 0),
-(91, 1, 1, '2019-06-05 12:00:00', '2019-06-07 12:00:00', 3500, 2, 1, 3, 0);
+(91, 1, 1, '2019-06-05 12:00:00', '2019-06-07 12:00:00', 3500, 2, 1, 3, 0),
+(92, 3, 8, '2011-10-20 19:00:00', '2015-10-20 19:00:00', 20000, 9, 1, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -264,7 +289,8 @@ CREATE TABLE `train_type` (
 --
 
 INSERT INTO `train_type` (`id`, `places`, `type_name`) VALUES
-(1, '45', 'Скорый');
+(1, '45', 'Скорый'),
+(2, '20', 'Люкс');
 
 -- --------------------------------------------------------
 
@@ -285,10 +311,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `email`, `password`, `auth_key`) VALUES
+(0, 'Guest', NULL, NULL, NULL),
 (1, 'admin9999', 'admin99@mail.ru', '$2y$13$nMPNhRAn8i1TNBybAqkWh.lsZMCMaGjQKYORmLkWMx6HhDrrxS5ya', '14aGe4e1fz0x3BkTn7X0_w4rXanDJmen'),
 (2, 'yauser228', 'user1337@mail.ru', '$2y$13$WNZJG6gnWJqK5poRpEw7DOd1nPl81FAXC9PdVoS7SQ46HzckA2KcK', '_uavtwMpynITbivQV5-TIW5RxQ7oTerr'),
 (5, 'loginator228', 'loginator@gmail.com', '$2y$13$CkJ79By5oyCZbAqO9ZO8neZekx8F8sMDdZ6xesOjQMbOntivQI8Gq', '5WYgnEX6dSKW9T4bQy8oNB1h6aXPCanL'),
-(6, 'Voider404', 'alterno@gmail.com', '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG', 'fOze2mGOMDMckaYH0K3DwxgkJ1rfxVgs'),
+(6, 'Voider404', 'alterno@gmail.com', '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG', 'BDd8FBLy3bUHt57Sh9jNBGrB5E1n46Td'),
 (7, 'TestAccount', 'void@gmail.com', '$2y$13$2mCiYefYtDoJaJLIV34oO.29MbaKe4lvGnTJrbW..zDLd83wXeCSe', NULL),
 (8, 'RTK20192020', 'rtk@mail.ru', '$2y$13$BfMdJEP.eOjywR5DrFFnZuxGoC0HH4k/dSZU3CqUi9U4QKGzKAA6y', 'DcCn15-MdAA_zMYRckxjexrH2pLcrIwi');
 
@@ -355,13 +382,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `description`
 --
 ALTER TABLE `description`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT для таблицы `reserved`
 --
 ALTER TABLE `reserved`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `stations`
@@ -373,7 +400,7 @@ ALTER TABLE `stations`
 -- AUTO_INCREMENT для таблицы `timetable`
 --
 ALTER TABLE `timetable`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT для таблицы `train`
@@ -385,13 +412,13 @@ ALTER TABLE `train`
 -- AUTO_INCREMENT для таблицы `train_type`
 --
 ALTER TABLE `train_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
