@@ -32,6 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'id',
                 'passanger_id',
                 'id_route',
+                [
+                        'attribute' =>     'id_route',
+                        'filter' => \yii\helpers\ArrayHelper::map(\app\models\Timetable::find()->all(),'id', 'fullName')
+                ],
                 'start_reserv',
                 'name',
                 'surname',

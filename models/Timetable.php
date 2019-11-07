@@ -99,4 +99,9 @@ class Timetable extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Stations::className(), ['id' => 'next_stay']);
     }
+
+    public function getFullName()
+    {
+        return $this->train->number . ' ' . $this->station->name;
+    }
 }
