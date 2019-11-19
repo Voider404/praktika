@@ -256,5 +256,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="kurs-377-isu" />
   </component>
 </module>

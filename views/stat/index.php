@@ -29,8 +29,25 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+
+                'template' => '{view}{update}{delete}',
+                'buttons' => [
+                    'view' => function ($url, $model) {
+                        return Html::a('View', $url);
+                    },
+
+
+                    'update' => function ($url, $model) {
+                        return Html::a('Edit', $url);
+                    },
+
+                    'delete' => function ($url, $model) {
+                        return Html::a('Delete', $url, ['data-method' => 'POST']);
+                    },
         ],
+    ]
+    ]
     ]); ?>
 
 
