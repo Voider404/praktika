@@ -2,23 +2,22 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\ReservedSearch */
+/* @var $searchModel app\models\StatSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Reserveds';
+$this->title = 'Stations';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="reserved-index">
+<div class="stations-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Reserved', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Stations', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php Pjax::begin(); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
@@ -28,19 +27,11 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'passanger_id',
-            'id_route',
-            'start_reserv',
             'name',
-            //'surname',
-            //'birthdate',
-            //'documents',
-            //'status',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 
-    <?php Pjax::end(); ?>
 
 </div>
