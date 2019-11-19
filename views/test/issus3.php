@@ -14,11 +14,6 @@ use yii\helpers\Html;
 
 <?= $form->field($model, 'name')->label('Название') ?>
 <?= $form->field($model, 'info')->label('Информация') ?>
-
-
-
-
-
 <?= Html::submitButton('Добавить', ['class'=> "btn btn-primary"]) ?>
 
 

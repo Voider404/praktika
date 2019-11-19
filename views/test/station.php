@@ -1,7 +1,6 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 ?>
 <table  class="table table-hover">
   <thead>
@@ -16,14 +15,14 @@ use yii\widgets\ActiveForm;
 foreach($model as $station): 
 ?>
 <tr>
-<td><?=$stay->name?></td>
-<td><?=$stay->info?></td>
+<td><?=$station->name?></td>
+<td><?=$station->info?></td>
 
 
 <?php
 if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { //  If there is a user with a certain password
-  echo Html::tag("td", Html::tag("a", "Убрать станцию", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/dele?id=' . $stay->id),]));
-  echo Html::tag("td", Html::tag("a", "Ред.", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/issus3red?id=' . $stay->id),]));
+  echo Html::tag("td", Html::tag("a", "Убрать станцию", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/dele?id=' . $station->id),]));
+  echo Html::tag("td", Html::tag("a", "Ред.", ["class"=>"btn btn-primary","href"=>Url::toRoute('test/issus3red?id=' . $station->id),]));
 }
 ?>
 </tr>

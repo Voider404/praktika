@@ -31,11 +31,6 @@ use yii\helpers\Url;
 <br>
 <br>
 <br>
-<? if (\app\models\User::findOne(Yii::$app->user->id)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') //  If there is a user with a certain password
-{
-    echo Html::tag("td", Html::tag("a", "GII", ["class"=>"btn btn-primary","href"=>Url::toRoute('/gii' ),])); // GII button for admin, why not?
-}
-?>
 <?php $this->endBody() ?>
 </body>
 </html>

@@ -14,7 +14,7 @@ use app\models\Description;
 use app\models\TrainType;
 use app\models\Message;
 use app\models\LoginForm;
-use app\models\Stay;
+use app\models\Stations;
 use yii\data\Pagination;
 use app\models\User;
 
@@ -199,7 +199,7 @@ class TestController extends Controller
     public function actionStation()
     {
         return $this->render('station', [
-            'model' => \app\models\Stay::find()->all()
+            'model' => \app\models\Stations::find()->all()
         ]);
     }
 
@@ -209,20 +209,21 @@ class TestController extends Controller
         if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
             return $this->redirect(['login']); // Redirect back to the page
         }
-        $model = new Stay();
-        if ($_POST['Stay']) {
+        $model = new Stations();
+        if ($_POST['Stations']) {
             $model->attributes = $_POST['Stay'];
             if ($model->validate() && $model->save()) {
                 return $this->redirect(['station']); // Redirect back to the page
             }
         }
+
         return $this->render('issus3', compact('model'));
     }
 
 
     public function actionIssus3red($id)
     {
-        $model = Stay::findOne($id);
+        $model = Stations::findOne($id);
         if ($model->load(Yii::$app->request->post())) {
 
             if ($model->validate()) { // If model is validated
@@ -240,7 +241,7 @@ class TestController extends Controller
         if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') { // If there is a user with a certain password
             return $this->redirect(['login']); // Redirect back to the page
         }
-        Stay::findOne($id)->delete();
+        Stations::findOne($id)->delete();
         return $this->redirect(['station']); // Redirect back to the page
     }
 
@@ -314,7 +315,7 @@ class TestController extends Controller
 
         $query = Reserved::find()->where(['status' => 1]); // Поиск ВСЕХ авторизированных пользоваелей
         $some = new ActiveDataProvider(); // Провайдер данных, см. Дополнительная литература
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 5]); // Разделение на страницы
+       // $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 5]); // Разделение на страницы
         $models = $query->all();
         // VarDumper::dump($models,10,true);
         return $this->render('reservedokk', ['model' => $array, 'models' => $models, 'pages' => $pages]);

@@ -44,8 +44,11 @@ AppAsset::register($this);
       <li class="nav-item">
         <a class="nav-link" href="<?php echo Url::toRoute('/test/glav');?>">Главная <span class="sr-only"></span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo Url::toRoute('/test/timetable');?>">Расписание</a>
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo Url::toRoute('/test/timetable');?>">Расписание</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo Url::toRoute('/test/station');?>">Станции</a>
         </li>
         <?php 
         if (\app\models\User::findOne(Yii::$app->user->id == 1)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
