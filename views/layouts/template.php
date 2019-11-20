@@ -61,6 +61,7 @@ if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWz
 }
 ?>
 <?php
+
 if (\app\models\User::findOne(Yii::$app->user->id)){
   echo Html::tag("a", "История поездок", ["class"=>"nav-link","href"=>Url::toRoute('/test/reservedokk?id=') . Yii::$app->user->id]);
 }
