@@ -27,7 +27,7 @@ $config = [
         'bundles' => [
             'dosamigos\google\maps\MapAsset' => [
                 'options' => [
-                    'key' => 'this_is_my_key',
+                    'key' => 'AIzaSyBGx5XtlcP12vf7gSW5NCmv19KdzoXZAQM',
                     'language' => 'id',
                     'version' => '3.1.18'
                 ]
