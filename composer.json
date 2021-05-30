@@ -20,7 +20,7 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
 	"yiisoft/yii2-debug": "~2.1.0",
 	"yiisoft/yii2-gii": "~2.1.0",
-    "sibilino/yii2-openlayers": "*"   
+    "2amigos/yii2-google-maps-library" : "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
