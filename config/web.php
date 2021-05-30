@@ -10,7 +10,6 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
-		'@sibilino/yii2/openlayers' => '@vendor/sibilino/yii2-openlayers/widget',
     ],
     'components' => [
         'request' => [
@@ -24,6 +23,17 @@ $config = [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
         ],
+'assetManager' => [
+        'bundles' => [
+            'dosamigos\google\maps\MapAsset' => [
+                'options' => [
+                    'key' => 'this_is_my_key',
+                    'language' => 'id',
+                    'version' => '3.1.18'
+                ]
+            ]
+        ]
+                ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
