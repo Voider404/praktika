@@ -10,6 +10,7 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+		'@sibilino/yii2/openlayers' => '@vendor/sibilino/yii2-openlayers/widget',
     ],
     'components' => [
         'request' => [
