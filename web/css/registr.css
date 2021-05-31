@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+html{
+    --acentcolor: #F34213;
+    --acentblack:#1C2321;
+    --snow:#FCFAF9;
+    --gunmetal:#2E2E3A;
+    --bluegray:#7D98A1; 
+}
+.header{
+
+    height: 6rem;
+    background: var(--acentcolor);
+    margin-bottom: 1rem;
+}
+.titul{
+    margin: 1rem 3rem;
+    display: inline-block;
+    color: var(--snow);
+}
+.menu {
+    float: right;
+    margin: 1.25rem 3rem;
+    font-size: 24px;
+}
+.menulink{
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 8px 12px;
+    color: var(--snow);
+    border: 1px solid var(--snow);
+    border-radius: 8px;
+    transition: all 0.3s;
+    font-size: 18px;
+    background: 0;
+
+}
+.menulink:hover{
+    text-decoration: none;
+    color: var(--acentcolor);
+    border: 1px solid var(--acentcolor);
+    background: var(--snow);
+}
+
+ .menu > *{
+     display: inline-block;
+ }
+
+.window-wrapper{
+    background: #fff;
+    width: 800px;
+    margin: 30px auto;
+    border-radius: 6px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    overflow: auto;
+    height: 400px;
+    position: relative;
+    }
+    .window-title{
+        text-align: center;
+        font-weight: bold;
+        }
+ .namedes{
+padding: 14px;
+text-align: right;
+width: 100px;
+color: #5d7185;
+font-weight: bold;
+
+  }
+
+    .chat82{
+padding: 14px;
+border-left: 1px solid #cfdae1;
+float: left;
+text-overflow: flip;
+color: #333f4d;
+width: 600px;
+
+
+
+}
+.input23{
+    background: #e4eaee;
+    padding: 6px;
+    position: absolute;
+    left: 0;
+    border-radius: 6px;
+    margin: 30px auto;
+    width: 802px;
+    right: 0;
+    bottom: 5%;
+    border-top: 1px solid #cfdae1; 
+}
+.input24{
+    float:right;
+    cursor: pointer;  
+    outline: none;
+}   
+.jor{
+    width: 200px;
+    position: relative;
+}   
+.jor2{
+    bottom:3.3rem;
+    left:12.7rem;
+    position: relative;
+}

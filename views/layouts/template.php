@@ -41,39 +41,15 @@ AppAsset::register($this);
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo Url::toRoute('/test/glav');?>">Главная <span class="sr-only"></span></a>
-      </li>
+   
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo Url::toRoute('/test/timetable');?>">Расписание</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo Url::toRoute('/test/station');?>">Станции</a>
+            <a class="nav-link" href="<?php echo Url::toRoute('/test/station');?>">Мероприятия</a>
         </li>
         <?php 
-        if (\app\models\User::findOne(Yii::$app->user->id == 1)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
-  echo Html::tag("a", "Станции", ["class"=>"nav-link","href"=>Url::toRoute('/test/station')]);
+        if (\app\models\User::findOne(Yii::$app->user->id == 8)->password == '$2y$13$BfMdJEP.eOjywR5DrFFnZuxGoC0HH4k/dSZU3CqUi9U4QKGzKAA6y') {
+  echo Html::tag("a", "Редактировать события", ["class"=>"nav-link","href"=>Url::toRoute('/test/station')]);
 }
 ?>
-<?php
-if (\app\models\User::findOne(Yii::$app->user->id)->password != '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG'){
-  echo Html::tag("a", "Мои Брони", ["class"=>"nav-link","href"=>Url::toRoute('/test/reservedokk2?id=') . Yii::$app->user->id]);
-}
-?>
-<?php
-
-if (\app\models\User::findOne(Yii::$app->user->id)){
-  echo Html::tag("a", "История поездок", ["class"=>"nav-link","href"=>Url::toRoute('/test/reservedokk?id=') . Yii::$app->user->id]);
-}
-?>
-<?php 
-        if (\app\models\User::findOne(Yii::$app->user->id == 1)->password == '$2y$13$kjnIHfWzfq/aTv8glhYnL.T3OK97JPnZ1Zt1acl3aOGc2qOmhTTAG') {
-  echo Html::tag("a", "Брони", ["class"=>"nav-link","href"=>Url::toRoute('/test/reserved')]);
-}
-?>
-              <li class="nav-item">
-        <a class="nav-link" href="<?php echo Url::toRoute('/test/train');?>">О поездах</a>
-        </li>
       </ul>
       <ul class="navbar-nav justify-content-end">
      
